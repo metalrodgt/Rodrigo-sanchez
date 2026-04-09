@@ -1,0 +1,100 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -112
+      ],
+      "id": "9aa943a6-950f-4d65-8a00-04aead1c1e27",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "el canal de musica en decadencia nose",
+        "options": {
+          "username": "Shinji"
+        }
+      },
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        160,
+        64
+      ],
+      "id": "cc47d302-3efe-4c69-a08b-b1574d7ac06d",
+      "name": "Discord",
+      "webhookId": "5433a24a-cfb4-49d0-87d8-48bb42ef281c",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "zqal1HYYQ5hP517U",
+          "name": "Discord Webhook account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "metalrodgt@gmail.com",
+        "subject": "prueba",
+        "emailType": "text",
+        "message": "estamos probando ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        176,
+        -144
+      ],
+      "id": "d35f661e-21dd-4bbe-a7cf-800e997ac242",
+      "name": "Send a message",
+      "webhookId": "b4d8c0ee-1605-4078-a34a-aa76b8e393e3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "aLUOCOoOL2iYt3Xu",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ac1e2a3d-1379-4be5-8bc0-3fffdf1f91f1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b4e63ce065a278872c69a4d7a262b33a5690affecc65e626818a4a45be1f5050"
+  },
+  "id": "y37btnLCi3V45nzf",
+  "tags": []
+}

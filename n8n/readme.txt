@@ -1,0 +1,3 @@
+My N8N workflow is designed to detect page inputs and deliver notification outputs to the page owner.
+
+The errors and complications encountered in the process were the difficulty in finding the official pages to generate credentials on Google Cloud, and once logged in, the page didn't function correctly when generating the API. There were also many external connection problems that caused workflow failures.
